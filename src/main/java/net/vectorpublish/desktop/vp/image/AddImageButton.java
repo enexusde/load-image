@@ -73,7 +73,6 @@ public class AddImageButton extends VPAbstractAction implements LayerSelectionLi
 	public void actionPerformed(ActionEvent e) {
 		new Thread(new Runnable() {
 			public void run() {
-				System.out.println("hi");
 				JFileChooser fc = new JFileChooser();
 				fc.showOpenDialog(new JFrame());
 				File file = fc.getSelectedFile();
@@ -91,7 +90,7 @@ public class AddImageButton extends VPAbstractAction implements LayerSelectionLi
 						} else {
 							return;
 						}
-						new AddImageStep(hist, data);
+						new AddImageStep(hist, hist.getCurrentDocument().getLastExecutedHistoryStep(), data);
 						redo.actionPerformed(null);
 					} catch (IOException e) {
 						wrn.addWarning(e.getMessage());

@@ -11,8 +11,8 @@ import net.vectorpublish.desktop.vp.image.layer.ImageLayer;
 
 public class AddImageStep extends HistoryStep<AddImageData> {
 
-	public AddImageStep(History history, AddImageData data) {
-		history.super(history.getCurrentDocument().getLastExecutedHistoryStep(), data);
+	public AddImageStep(History history, HistoryStep<?> last, AddImageData data) {
+		history.super(last, data);
 	}
 
 	@Override

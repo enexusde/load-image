@@ -2,7 +2,6 @@ package net.vectorpublish.desktop.vp.image.layer;
 
 import java.awt.image.BufferedImage;
 
-import net.vectorpublish.desktop.vp.api.ui.MouseParticipant;
 import net.vectorpublish.desktop.vp.api.vpd.DocumentNode;
 import net.vectorpublish.desktop.vp.api.vpd.ModificationContext;
 import net.vectorpublish.desktop.vp.api.vpd.ModificationContext.LayerNodeImpl;
@@ -22,7 +21,7 @@ public class ImageLayer extends LayerNodeImpl {
 		participant = new ImageDrawParticipant(image, this);
 	}
 
-	public MouseParticipant getParticipant() {
+	public ImageDrawParticipant getParticipant() {
 		return participant;
 	}
 
