@@ -43,7 +43,7 @@ public class ImageDrawParticipant implements DrawParticipant, MovableAxis {
 	}
 
 	public void paint(VectorPublishGraphics graphics, int documentWidth, int documentHeight) {
-		graphics.drawImage(image, x, y, null);
+		graphics.drawImage(getCompleteImage(), x, y, null);
 		Enumeration<VectorPublishNode> children = layer.children();
 		while (children.hasMoreElements()) {
 			VectorPublishNode vectorPublishNode = (VectorPublishNode) children.nextElement();
@@ -76,6 +76,10 @@ public class ImageDrawParticipant implements DrawParticipant, MovableAxis {
 
 	public void moveVert(int y) {
 		this.y += y;
+	}
+
+	public BufferedImage getCompleteImage() {
+		return image;
 	}
 
 }
